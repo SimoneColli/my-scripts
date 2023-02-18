@@ -1,2 +1,1 @@
-# shell-scripts
-first commit
+# Shell-scripts
