@@ -1,9 +1,13 @@
 #required pytube -> pip install pytube
 
 from pytube import YouTube
+
+def progress_bar(stream = None, chunk = None, file_handle = None, remaining = None):
+    pass
+
 def dw_video(url):
-    yt = YouTube(url)
-    yt = yt.streams.get_highest_resolution()
+    yt = YouTube(url, on_progress_callback = progress_bar)
+    yt = yt.streams.filter(progressive = True, file_extensio = "mp4").get_highest_resolution()
     try:
         print("Download.....")
         yt.download()
