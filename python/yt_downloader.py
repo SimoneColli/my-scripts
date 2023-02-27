@@ -1,20 +1,24 @@
-#required pytube -> pip install pytube
+#required:
+#pytube -> pip install pytube
+#progressbar -> pip install progress
 
 from pytube import YouTube
+#from progress.bar import Bar
 
-def progress_bar(stream = None, chunk = None, file_handle = None, remaining = None):
+
+def progress_bar():
     pass
 
 def dw_video(url):
-    yt = YouTube(url, on_progress_callback = progress_bar)
-    yt = yt.streams.filter(progressive = True, file_extensio = "mp4").get_highest_resolution()
+    yt = YouTube(url)
+    yt = yt.streams.get_highest_resolution()
+    print("Download.....")
     try:
-        print("Download.....")
         yt.download()
+        print("Download completed")
     except:
         print("Download failed")
     
-    print("Download completed")
 
 url_list = []
 
