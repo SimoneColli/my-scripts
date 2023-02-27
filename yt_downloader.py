@@ -20,5 +20,5 @@ while True:
         break
     url_list.append(url)
 
-while str(url_list) != 0:
+while len(url_list) != 0:
     dw_video(url_list.pop(0))
