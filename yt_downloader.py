@@ -3,18 +3,21 @@
 from pytube import YouTube
 def dw_video(url):
     yt = YouTube(url)
-    yt = youtubeObject.streams.get_highest_resolution()
+    yt = yt.streams.get_highest_resolution()
     try:
-        youtubeObject.download()
+        print("Download.....")
+        yt.download()
     except:
-        print("Error")
+        print("Download failed")
     
     print("Download completed")
 
 url_list = []
-url = 1
-while url != 0:
+
+while True:
     url = input("Insert video url: ")
+    if url == "0":
+        break
     url_list.append(url)
 
 while str(url_list) != 0:
