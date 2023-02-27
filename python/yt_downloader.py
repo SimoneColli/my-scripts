@@ -15,7 +15,7 @@ def dw_video(url):
 url_list = []
 
 while True:
-    url = input("Insert video url: ")
+    url = input("Insert video url(for exit 0): ")
     if url == "0":
         break
     url_list.append(url)
