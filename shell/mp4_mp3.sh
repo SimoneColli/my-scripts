@@ -5,12 +5,12 @@
 #-d destination folder
 
 
-while getopts i:d:h: flag do
+while getopts i:d:h: flag
+do
 	case "${flag}" in
 		i) inputName=${OPTARG};;
 		d) destFolder=${OPTARG};;
 		h) ;;
-
 	esac
 done
 
