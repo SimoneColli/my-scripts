@@ -7,11 +7,11 @@ help=0
 # d destination folder
 # h help
 
-while getopts n:d:h: flag
+while getopts n:f:h: flag
 do
 	case "${flag}" in
 		n) name=${OPTARG};;
-		d) destFolder=${OPTARG};;
+		f) destFolder=${OPTARG};;
 		h) help=1;;
 	esac
 done
@@ -24,7 +24,7 @@ if [ "$help" != "0" ]; then
 	echo ""
 	echo "-n name, to choose the header name (default header)"
 	echo ""
-	echo "-d name, to choose the destination folder, create if not exist"
+	echo "-f name, to choose the destination folder, create if not exist"
 	echo ""
 	echo "-h help"
 	echo ""
@@ -55,8 +55,8 @@ upperName=$(echo $name | tr '[:lower:]' '[:upper:]')
 # echo "$upperName"
 # echo "${destFolder}/${name}"
 
-echo "#ifndef ${upperName}_HH" >> "$out"
-echo "#define ${upperName}_HH" >> "$out"
+echo "#ifndef ${upperName}_GUARD_HH" >> "$out"
+echo "#define ${upperName}_GUARD_HH 1" >> "$out"
 
 echo "" >> "$out"
 echo "" >> "$out"
