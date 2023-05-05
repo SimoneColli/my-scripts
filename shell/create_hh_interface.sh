@@ -55,10 +55,10 @@ upperName=$(echo $name | tr '[:lower:]' '[:upper:]')
 # echo "$upperName"
 # echo "${destFolder}/${name}"
 
-echo "#ifndef ${upperName}_GUARD_HH" >> "$out"
-echo "#define ${upperName}_GUARD_HH 1" >> "$out"
+echo "#ifndef ${upperName}_INCLUDE_GUARD_HH" >> "$out"
+echo "#define ${upperName}_INCLUDE_GUARD_HH 1" >> "$out"
 
 echo "" >> "$out"
 echo "" >> "$out"
 
-echo "#endif // end $name" >> "$out"
+echo "#endif // ${upperName}_INCLUDE_GUARD_HH $name" >> "$out"
